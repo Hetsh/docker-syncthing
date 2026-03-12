@@ -4,4 +4,4 @@ RUN apk upgrade --no-cache && \
 	apk add --no-cache \
 		syncthing=2.0.14-r0
 
-ENTRYPOINT ["syncthing", "--gui-address=0.0.0.0:8384", "--no-browser", "--config=/config", "--data=/data"]
+ENTRYPOINT ["syncthing", "--gui-address=0.0.0.0:8384", "--no-browser", "--home=/data"]

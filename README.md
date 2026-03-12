@@ -20,23 +20,17 @@ docker stop syncthing
 
 ## Creating persistent storage
 ```bash
-CONFIG="/path/to/config"
 DATA="/path/to/data"
-mkdir -p "$CONFIG" "$DATA"
+mkdir -p "$DATA"
 ```
 Start the server with the additional mount flags:
 ```bash
-docker run \
-    --mount type=bind,source=/path/to/config,target=/config \
-    --mount type=bind,source=/path/to/data,target=/data \
-    ...
+docker run --mount type=bind,source=/path/to/data,target=/data ...
 ```
 
 ## Time
 Synchronizing the timezones will display the correct time in the logs.
 The timezone can be shared with this mount flag:
 ```bash
-docker run \
-    --mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly \
-    ...
+docker run --mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly ...
 ```
