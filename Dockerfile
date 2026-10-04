@@ -1,5 +1,5 @@
-FROM hetsh/alpine:20260805-6
-ARG LAST_UPGRADE="2026-09-27T14:38:56+02:00"
+FROM hetsh/alpine:20260805-7
+ARG LAST_UPGRADE="2026-10-04T08:13:31+02:00"
 RUN apk upgrade --no-cache && \
 	apk add --no-cache \
 		syncthing=2.1.5-r0
